@@ -1,0 +1,181 @@
+%%-------------------------------------------------- READ THE COMMENTS CAREFULLY ------------------------------------------%%
+%%%%%%%%%%%%%%% Template for generating Report and Presentation according to G.N.D.E.C., Ludhiana's format %%%%%%%%%%%%%%%%%%%%%%%
+%% Here myclass is the class name
+%% print is used for making a report
+%% screen is used for making a presentation
+%% If you want the content common in print and screen, then don't specify the content in screen or print environment.
+%%----------------------------------------------------------------------------------------------------------------------------
+\documentclass[12pt]{myclass}
+\usepackage[print,sectionbreak]{pdfscreen}             %% If you want to produce presesntation then use screen, otherwise use print
+%----------------------------------------------------
+\makeatletter
+\renewenvironment{abstract}{%
+  \titlepage
+%  \null\vfil
+  \@beginparpenalty\@lowpenalty
+  \begin{center}%
+    \bfseries \abstractname
+    \@endparpenalty\@M
+  \end{center}%
+}{
+  \par\vfil\null\endtitlepage
+}\makeatother
+%----------------------------------------------------
+%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{print}
+\lhead{\large\bfseries PROJECT NAME}                         %% Here replace your project name
+\usepackage[left=3cm, right=2cm, top=3.5cm, bottom=3.5cm]{geometry}
+\pagestyle{fancy}
+\end{print}
+
+\margins{.5cm}{.5cm}{.5cm}{.5cm}                        %%margins
+
+\begin{screen}
+\renewcommand{\rmdefault}{phv} % Arial (font style)
+\renewcommand{\sfdefault}{phv} % Arial
+\end{screen}
+
+\screensize{9cm}{10cm}                                  %% screensize of slides
+\overlay{small.jpg}                                      %% Theme for presentation. This theme sets the background image
+
+%-----------------------------------------%% These commands are used in first page after titlepage
+\newcommand{\student}{\vskip 2.5cm}
+\newcommand{\supervisor}{\vskip 2cm}
+\newcommand{\stamp}{\vskip 2.5cm}                                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%% Title page %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{print}
+\uppercase{ \title{project name}}
+\subtitle{subtitle..}
+
+\author{your name}
+\class{year and branch}              %% e.g D$3$ CSE
+\classrollno{your class rollno}
+\unirollno{your university rollno}
+
+\duration{Six Months/Weeks Training}
+\institute{Institute name}
+\timeperiod{start and end date of training}    %% here change the date  like (From January, 2011 to June, 2011)
+
+\branch{your branch}     %%INFORMATION TECHNOLOGY
+
+\end{print}
+%%----------------------------------------------------------------------%%
+\begin{screen}
+\newcommand{\ppttitle}{\begin{center}
+\LARGE project name
+\vskip 1cm
+\large author name
+\vskip 0.3cm
+\large Guide by: mentor name
+\vskip 0.3cm
+\large email address
+\end{center}}
+\end{screen}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%------------------- Body of document----------------------------------%%
+\begin{document}
+
+\begin{print}
+ \maketitle                                 %%% Title page for report
+\end{print}
+
+\begin{screen}
+\ppttitle                                  %%% Title page for presentation
+\end{screen}
+
+\begin{print}
+\pagenumbering{Roman}                  %% Pagenumering can be in Roman or arabic
+\cfoot{\thepage}                       %% cfoot means centered footer(page no.)
+%---------------------------------------------------------
+\section*{To Whom it may concern}                        %% '*' is used to unnumbered the section
+I here by certify that Your Name Roll No.   of Guru Nanak Dev Engineering College Ludhiana, has undergone six months/weeks training from starting date to end date at our organisation to fulfil the requirements for the award of degree of B.Tech (year and branch). He works on {project name} project during the training under the supervision of (Mentor name). During his tenure with us we found him sincere and hard working. Wishing him a great success in the future.
+\student
+Signature of the Student
+\supervisor
+Signature of the Supervisor 
+\stamp
+(Seal of Organisation)
+%---------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section*{Acknowledgment}                           %% '*' is used to unnumbered the section
+The author is highly grateful to the Dr. M.S. Saini (Director, Guru Nanak Dev Engineering College, Ludhiana) for providing this opportunity to carry out the six month training at Testing and Consultancy Cell, Guru Nanak Dev Engineering College, Ludhiana.\\ \\
+ The constant guidance and encouragement received from Er. K. S. Mann (Dean Training and Placement Cell, Guru Nanak Dev Engineering
+College, Ludhiana) has been of great help in carrying out the project work and is acknowledged with reverential thanks.\\ \\
+ The author would like to express a deep sense of gratitude and thanks profusely to Dr. H.S. Rai (Dean, Testing and Consultancy Cell, Guru Nanak Dev Engineering College, Ludhiana). Without the wise counsel and able guidance, it would have been impossible to complete the report in this manner. \\ \\
+The author express gratitude to other faculty members of Computer Science department of Guru Nanak Dev Engineering College for their intellectual support throughout the course of this work.\\ \\
+
+At last specify the co-helpers.
+%----------------------------------------------------------------------------------------
+\
+%-------------------------------------------------------------------
+\begin{abstract}
+Content here....
+\end{abstract}
+%---------------------------------------------------------------------------
+
+\tableofcontents                       %% This command automatically generates Index page
+
+\listoffigures                         %% This command creates a list of figures in the document
+
+
+
+\pagenumbering{arabic}                  %% now onwards arabic page numbeing is required
+\cfoot{\thepage}                        %% centered footer (page no.)
+
+%------------------------------------------------------
+\section{Introduction To Organisation}
+About organisation where you have training......
+%-----------------------------------------------------------
+\end{print}
+%-------------------------------------------------
+\section{Introduction}
+This section's content...
+
+\section{About Your Project}
+This section's content...
+
+\section{About Your Project}
+This section's content...
+
+\begin{print}
+\section{Conclusion}                                %% More section can be added as per requirement
+This section's content...
+
+%-------------------------------------------------------------
+%% Here example is given for  writing a  bibliography
+\begin{thebibliography}{9}
+
+\bibitem{ConcreteMath}
+R.L. Graham, D.E. Knuth, and O. Patashnik, \emph{Concrete
+mathematics}, Addison-Wesley, Reading, MA, 1989.
+\bibitem{Wikipedia}
+Donald E. Knuth, The \emph{TeXbook}, Addison–Wesley, Boston, 1986, p. 1.
+\bibitem{wiki2}
+Leslie Lamport (April 23, 2007). ``The Writings of Leslie Lamport: \emph{LaTeX: A Document Preparation System".}
+
+
+\end{thebibliography}
+%------------------------------------------------------------------------
+\end{print}
+\begin{screen}
+%-----------------------------------------------------
+\section{Links}
+ http://google.com
+\newline
+http://http://en.wikipedia.org/wiki/Wikipedia
+
+%----------------------------------------
+\section*{}
+\begin{center}
+Thank you
+\end{center}
+\end{screen}
+\end{document}
+%%------------------------End document-------------------------%%
